@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reviews>
+    <review>
+        <reviewId>R1001</reviewId>
+        <bookingId>B5001</bookingId>
+        <userId>U1001</userId>
+        <movieId>M1001</movieId>
+        <theatreId>TH001</theatreId>
+        <rating>5</rating>
+        <comment>Great movie!</comment>
+        <status>PUBLISHED</status>
+        <createdAt>2023-10-01T21:00:00</createdAt>
+    </review>
+</reviews>

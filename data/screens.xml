@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screens>
+    <screen>
+        <screenId>SCREEN01</screenId>
+        <theatreId>TH001</theatreId>
+        <name>Screen 1</name>
+        <capacity>100</capacity>
+        <soundSystem>Dolby Atmos</soundSystem>
+        <projection>IMAX 4K</projection>
+        <format>2D</format>
+        <status>ACTIVE</status>
+    </screen>
+</screens>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shows>
+    <show>
+        <showId>SHOW1001</showId>
+        <movieId>M1001</movieId>
+        <theatreId>TH001</theatreId>
+        <screenId>SCREEN01</screenId>
+        <showDate>2023-10-01</showDate>
+        <startTime>18:00</startTime>
+        <endTime>20:30</endTime>
+        <status>SCHEDULED</status>
+    </show>
+</shows>

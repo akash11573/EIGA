@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<payments>
+    <payment>
+        <paymentId>PAY1001</paymentId>
+        <bookingId>B5001</bookingId>
+        <amount>10.0</amount>
+        <paymentMethod>DEMO</paymentMethod>
+        <paymentStatus>SUCCESS</paymentStatus>
+        <transactionReference>TXN9999</transactionReference>
+        <createdAt>2023-09-30T10:05:00</createdAt>
+    </payment>
+</payments>

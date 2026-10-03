@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<staff>
+    <staffMember>
+        <staffId>ST1001</staffId>
+        <userId>U3001</userId>
+        <theatreId>TH001</theatreId>
+        <status>ACTIVE</status>
+        <createdAt>2023-01-01T10:00:00</createdAt>
+    </staffMember>
+</staff>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<movies>
+        
+    <movie>
+                
+        <movieId>M1001</movieId>
+                
+        <tmdbId>12345</tmdbId>
+                
+        <title>The Matrix</title>
+                
+        <overview>A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.</overview>
+                
+        <posterPath>/matrix_poster.jpg</posterPath>
+                
+        <backdropPath>/matrix_backdrop.jpg</backdropPath>
+                
+        <releaseDate>1999-03-31</releaseDate>
+                
+        <runtime>136</runtime>
+                
+        <genres>Action, Sci-Fi</genres>
+                
+        <language>English</language>
+                
+        <status>ACTIVE</status>
+            
+    </movie>
+    
+    <movie>
+        <movieId>M-TEST1</movieId>
+        <tmdbId>999999</tmdbId>
+        <title>Offline Test Movie</title>
+        <overview>Testing DAO without API</overview>
+        <posterPath/>
+        <backdropPath/>
+        <releaseDate/>
+        <runtime>0</runtime>
+        <genres/>
+        <language/>
+        <status>INACTIVE</status>
+        <trailerKey/>
+        <rating>0.0</rating>
+        <cast/>
+    </movie>
+</movies>

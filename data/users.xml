@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<users>
+                        
+    
+    
+    
+    
+    <user>
+                                                
+        
+        
+        
+        
+        <userId>U1001</userId>
+                                                
+        
+        
+        
+        
+        <fullName>User John</fullName>
+                                                
+        
+        
+        
+        
+        <email>user@eiga.com</email>
+                                                
+        
+        
+        
+        
+        <mobile/>
+                                                
+        
+        
+        
+        
+        <passwordHash>W+hj2DpzmqlrT45kPK7FTw==:vqN8u9OjoHuCYt5+8nDB5Ew2XToKn0yMq/fHmucJf7E=</passwordHash>
+                                                
+        
+        
+        
+        
+        <role>USER</role>
+                                                
+        
+        
+        
+        
+        <theatreId/>
+                                                
+        
+        
+        
+        
+        <status>ACTIVE</status>
+                                                
+        
+        
+        
+        
+        <createdAt/>
+                                            
+    
+    
+    
+    
+    </user>
+                    
+    
+    
+    
+    
+    <user>
+                                        
+        
+        
+        
+        <userId>O1001</userId>
+                                        
+        
+        
+        
+        <fullName>Owner Bob</fullName>
+                                        
+        
+        
+        
+        <email>owner@eiga.com</email>
+                                        
+        
+        
+        
+        <mobile/>
+                                        
+        
+        
+        
+        <passwordHash>W+hj2DpzmqlrT45kPK7FTw==:vqN8u9OjoHuCYt5+8nDB5Ew2XToKn0yMq/fHmucJf7E=</passwordHash>
+                                        
+        
+        
+        
+        <role>OWNER</role>
+                                        
+        
+        
+        
+        <theatreId>TH001</theatreId>
+                                        
+        
+        
+        
+        <status>ACTIVE</status>
+                                        
+        
+        
+        
+        <createdAt/>
+                                    
+    
+    
+    
+    </user>
+                
+    
+    
+    
+    <user>
+                                
+        
+        
+        <userId>S1001</userId>
+                                
+        
+        
+        <fullName>Staff Alice</fullName>
+                                
+        
+        
+        <email>staff@eiga.com</email>
+                                
+        
+        
+        <mobile/>
+                                
+        
+        
+        <passwordHash>W+hj2DpzmqlrT45kPK7FTw==:vqN8u9OjoHuCYt5+8nDB5Ew2XToKn0yMq/fHmucJf7E=</passwordHash>
+                                
+        
+        
+        <role>STAFF</role>
+                                
+        
+        
+        <theatreId>TH001</theatreId>
+                                
+        
+        
+        <status>ACTIVE</status>
+                                
+        
+        
+        <createdAt/>
+                            
+    
+    
+    </user>
+            
+    
+    
+    <user>
+                        
+        
+        <userId>A1001</userId>
+                        
+        
+        <fullName>Admin Boss</fullName>
+                        
+        
+        <email>admin@eiga.com</email>
+                        
+        
+        <mobile/>
+                        
+        
+        <passwordHash>W+hj2DpzmqlrT45kPK7FTw==:vqN8u9OjoHuCYt5+8nDB5Ew2XToKn0yMq/fHmucJf7E=</passwordHash>
+                        
+        
+        <role>ADMIN</role>
+                        
+        
+        <theatreId/>
+                        
+        
+        <status>ACTIVE</status>
+                        
+        
+        <createdAt/>
+                    
+    
+    </user>
+        
+    
+    <user>
+                
+        <userId>I1001</userId>
+                
+        <fullName>Inactive Joe</fullName>
+                
+        <email>inactive@eiga.com</email>
+                
+        <mobile/>
+                
+        <passwordHash>W+hj2DpzmqlrT45kPK7FTw==:vqN8u9OjoHuCYt5+8nDB5Ew2XToKn0yMq/fHmucJf7E=</passwordHash>
+                
+        <role>USER</role>
+                
+        <theatreId/>
+                
+        <status>INACTIVE</status>
+                
+        <createdAt/>
+            
+    </user>
+    
+    <user>
+        <userId>U1791054592476</userId>
+        <fullName>New Guy</fullName>
+        <email>new@eiga.com</email>
+        <mobile>123</mobile>
+        <passwordHash>DNRMjdsCtQBVQsJsVvwWxQ==:jp/ykrcwcg/MFwLBenMDHF/peroXsvN77AS5eN8HgMc=</passwordHash>
+        <role>USER</role>
+        <theatreId/>
+        <status>ACTIVE</status>
+        <createdAt>2026-10-04T00:39:52.495563</createdAt>
+    </user>
+</users>

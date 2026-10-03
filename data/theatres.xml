@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theatres>
+    <theatre>
+        <theatreId>TH001</theatreId>
+        <name>Cinema City</name>
+        <address>123 Main St</address>
+        <city>Metropolis</city>
+        <state>NY</state>
+        <ownerId>U1002</ownerId>
+        <status>ACTIVE</status>
+    </theatre>
+</theatres>

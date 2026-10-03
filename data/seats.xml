@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seats>
+    <seat>
+        <seatId>A1</seatId>
+        <screenId>SCREEN01</screenId>
+        <row>A</row>
+        <number>1</number>
+        <category>STANDARD</category>
+        <price>10.0</price>
+        <status>ACTIVE</status>
+    </seat>
+</seats>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookings>
+    <booking>
+        <bookingId>B5001</bookingId>
+        <userId>U1001</userId>
+        <showId>SHOW1001</showId>
+        <theatreId>TH001</theatreId>
+        <screenId>SCREEN01</screenId>
+        <seats>
+            <seatId>A1</seatId>
+        </seats>
+        <totalAmount>10.0</totalAmount>
+        <bookingStatus>CONFIRMED</bookingStatus>
+        <checkInStatus>NOT_CHECKED_IN</checkInStatus>
+        <createdAt>2023-09-30T10:00:00</createdAt>
+    </booking>
+</bookings>
