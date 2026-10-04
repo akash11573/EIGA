@@ -21,8 +21,29 @@
         <hr style="border-top: 1px dashed #000;">
         <p><strong>Seats:</strong> ${booking.seatIds}</p>
         <p><strong>Total Paid:</strong> $${booking.totalAmount}</p>
+        
         <hr style="border-top: 1px dashed #000;">
+        <%
+            String qrUrl = "";
+            try {
+                com.eiga.model.Booking b = (com.eiga.model.Booking) request.getAttribute("booking");
+                if (b != null) {
+                    long issued = java.time.ZonedDateTime.now(java.time.ZoneOffset.UTC).toInstant().toEpochMilli();
+                    if (b.getBookingTime() != null) {
+                        issued = b.getBookingTime().atZone(java.time.ZoneId.systemDefault()).toInstant().toEpochMilli();
+                    }
+                    long expires = issued + (24L * 60 * 60 * 1000);
+                    String payload = com.eiga.qr.QrGenerator.generatePayload(b.getBookingId(), issued, expires);
+                    qrUrl = "https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=" + java.net.URLEncoder.encode(payload, "UTF-8");
+                }
+            } catch(Exception e) {
+                out.print("<p style='color:red;'>QR Error: " + e.getMessage() + "</p>");
+            }
+        %>
+        <img src="<%= qrUrl %>" alt="QR Code" width="150" height="150" />
+        <br>
         <p>Booking Ref: ${booking.bookingId}</p>
+ ${booking.bookingId}</p>
         <p>Status: ${booking.bookingStatus}</p>
     </div>
 </body>

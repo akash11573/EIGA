@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<check_ins>
+            
+    
+    <checkIn>
+                        
+        
+        <checkInId>CI-1791121361476</checkInId>
+                        
+        
+        <bookingId>B1</bookingId>
+                        
+        
+        <userId>U1</userId>
+                        
+        
+        <theatreId>T1</theatreId>
+                        
+        
+        <showId>SH1</showId>
+                        
+        
+        <checkedInAt>2026-10-04T13:42:41.476851Z</checkedInAt>
+                        
+        
+        <staffId>STAFF1</staffId>
+                        
+        
+        <source>QR</source>
+                        
+        
+        <status>CHECKED_IN</status>
+                    
+    
+    </checkIn>
+        
+    
+    <checkIn>
+                
+        <checkInId>CI-1791121361495</checkInId>
+                
+        <bookingId>B6</bookingId>
+                
+        <userId/>
+                
+        <theatreId>T1</theatreId>
+                
+        <showId>SH1</showId>
+                
+        <checkedInAt>2026-10-04T13:42:41.495079Z</checkedInAt>
+                
+        <staffId>STAFF1</staffId>
+                
+        <source>MANUAL_BOOKING_ID</source>
+                
+        <status>CHECKED_IN</status>
+            
+    </checkIn>
+    
+    <checkIn>
+        <checkInId>CI-1791121361501</checkInId>
+        <bookingId>B8</bookingId>
+        <userId/>
+        <theatreId>T1</theatreId>
+        <showId>SH1</showId>
+        <checkedInAt>2026-10-04T13:42:41.501688Z</checkedInAt>
+        <staffId>STAFF1</staffId>
+        <source>QR</source>
+        <status>CHECKED_IN</status>
+    </checkIn>
+</check_ins>

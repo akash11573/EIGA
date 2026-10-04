@@ -64,9 +64,16 @@ public class UserDAO {
         parent.appendChild(child);
     }
 
-    public void save(User obj) {
+        public void save(User obj) {
         try {
             Document doc = XmlUtil.loadDocument(FILE_NAME);
+            NodeList nl = doc.getElementsByTagName("user");
+            for (int i = 0; i < nl.getLength(); i++) {
+                Element existing = (Element) nl.item(i);
+                if (obj.getUserId().equals(XmlUtil.getElementValue(existing, "userId"))) {
+                    doc.getDocumentElement().removeChild(existing); break;
+                }
+            }
             Element root = doc.getDocumentElement();
             Element newElement = doc.createElement("user");
             
@@ -86,4 +93,5 @@ public class UserDAO {
             e.printStackTrace();
         }
     }
+
 }
