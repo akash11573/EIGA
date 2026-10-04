@@ -12,6 +12,7 @@ public class TmdbClient {
 
     public TmdbClient() {
         this.client = HttpClient.newBuilder()
+                .version(HttpClient.Version.HTTP_1_1)
                 .connectTimeout(Duration.ofSeconds(10))
                 .build();
     }
