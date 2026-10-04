@@ -1,16 +1,23 @@
 package com.eiga.controller;
 
 import com.eiga.model.Movie;
+import com.eiga.model.Show;
+import com.eiga.model.Theatre;
 import com.eiga.service.MovieService;
+import com.eiga.dao.ShowDAO;
+import com.eiga.dao.TheatreDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import java.io.IOException;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @WebServlet({"/movies", "/movie", "/admin/movies/search-tmdb", "/admin/movies/import"})
 public class MovieServlet extends HttpServlet {
     private MovieService movieService = new MovieService();
+    private ShowDAO showDAO = new ShowDAO();
+    private TheatreDAO theatreDAO = new TheatreDAO();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getServletPath();
@@ -27,6 +34,23 @@ public class MovieServlet extends HttpServlet {
                 }
                 request.setAttribute("movie", movie);
                 request.setAttribute("isPlaying", movieService.isMovieCurrentlyPlaying(id));
+                
+                // Fetch valid active shows
+                List<Show> activeShows = showDAO.findAll().stream()
+                    .filter(s -> s.getMovieId().equals(id) && "SCHEDULED".equals(s.getStatus()))
+                    .collect(Collectors.toList());
+                
+                // Fetch related theatres
+                Map<String, Theatre> theatreMap = new HashMap<>();
+                for(Show s : activeShows) {
+                    if(!theatreMap.containsKey(s.getTheatreId())) {
+                        theatreMap.put(s.getTheatreId(), theatreDAO.findById(s.getTheatreId()));
+                    }
+                }
+                
+                request.setAttribute("activeShows", activeShows);
+                request.setAttribute("theatreMap", theatreMap);
+                
                 request.getRequestDispatcher("/movie-details.jsp").forward(request, response);
             } else if ("/admin/movies/search-tmdb".equals(path)) {
                 String query = request.getParameter("q");

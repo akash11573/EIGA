@@ -41,7 +41,6 @@ public class SeatLockService {
             }
         }
         
-        // Check Bookings
         List<Booking> bookings = bookingDAO.findAll().stream()
             .filter(b -> b.getShowId().equals(showId) && "CONFIRMED".equals(b.getBookingStatus()))
             .collect(Collectors.toList());
@@ -56,7 +55,6 @@ public class SeatLockService {
             }
         }
         
-        // Check Locks
         List<SeatLock> activeLocks = seatLockDAO.findAll().stream()
             .filter(l -> l.getShowId().equals(showId) && l.getStatus().equals("LOCKED"))
             .collect(Collectors.toList());
@@ -71,12 +69,21 @@ public class SeatLockService {
             }
             if (lock.getUserId().equals(userId)) {
                 userCurrentlyLocked.add(lock.getSeatId());
+                
+                // Unlock if the user had it locked but didn't submit it in this request
+                if (!seatIds.contains(lock.getSeatId())) {
+                    seatLockDAO.delete(lock.getLockId());
+                }
             }
         }
         
-        Set<String> totalSeats = new HashSet<>(userCurrentlyLocked);
-        totalSeats.addAll(seatIds);
-        if (totalSeats.size() > 6) {
+        // Let's recalculate active locks for this user after potential deletions
+        List<String> finalLockedSeats = new ArrayList<>();
+        for(String seatId : seatIds) {
+            finalLockedSeats.add(seatId);
+        }
+        
+        if (finalLockedSeats.size() > 6) {
             throw new Exception("Maximum 6 seats allowed per user per show.");
         }
         

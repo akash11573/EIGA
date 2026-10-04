@@ -14,9 +14,9 @@ public class AuthenticationFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
         String path = req.getRequestURI().substring(req.getContextPath().length());
         
-        // Allow public paths
         if (path.equals("/") || path.startsWith("/css/") || path.startsWith("/js/") || path.startsWith("/images/") 
-            || path.equals("/login") || path.equals("/register") || path.equals("/index.jsp")) {
+            || path.equals("/login") || path.equals("/register") || path.equals("/index.jsp")
+            || path.equals("/movies") || path.equals("/movie") || path.equals("/seat-selection")) {
             chain.doFilter(request, response);
             return;
         }
