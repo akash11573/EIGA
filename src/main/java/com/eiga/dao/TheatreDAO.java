@@ -1,72 +1,51 @@
 package com.eiga.dao;
-
 import com.eiga.model.Theatre;
 import com.eiga.util.XmlUtil;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-
-import java.util.ArrayList;
-import java.util.List;
-
+import org.w3c.dom.*;
+import java.util.*;
 public class TheatreDAO {
-
-    private static final String FILE_NAME = "theatres.xml";
-
     public List<Theatre> findAll() {
         List<Theatre> list = new ArrayList<>();
         try {
-            Document doc = XmlUtil.loadDocument(FILE_NAME);
-            NodeList nodeList = doc.getElementsByTagName("theatre");
-            for (int i = 0; i < nodeList.getLength(); i++) {
-                Node node = nodeList.item(i);
-                if (node.getNodeType() == Node.ELEMENT_NODE) {
-                    Element element = (Element) node;
-                    Theatre obj = new Theatre();
-                    obj.setTheatreId(XmlUtil.getElementValue(element, "theatreId"));
-                    list.add(obj);
+            Document doc = XmlUtil.loadDocument("theatres.xml");
+            NodeList nl = doc.getElementsByTagName("theatre");
+            for(int i=0; i<nl.getLength(); i++) {
+                if(nl.item(i).getNodeType() == Node.ELEMENT_NODE) {
+                    Element e = (Element) nl.item(i);
+                    Theatre t = new Theatre();
+                    t.setTheatreId(XmlUtil.getElementValue(e, "theatreId"));
+                    t.setName(XmlUtil.getElementValue(e, "name"));
+                    t.setCity(XmlUtil.getElementValue(e, "city"));
+                    t.setAddress(XmlUtil.getElementValue(e, "address"));
+                    t.setStatus(XmlUtil.getElementValue(e, "status"));
+                    list.add(t);
                 }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        } catch(Exception e) { e.printStackTrace(); }
         return list;
     }
-
     public Theatre findById(String id) {
-        for (Theatre obj : findAll()) {
-            if (id != null && id.equals(obj.getTheatreId())) {
-                return obj;
-            }
-        }
+        for(Theatre t : findAll()) if(id.equals(t.getTheatreId())) return t;
         return null;
     }
-
-    public void save(Theatre obj) {
+    private void addChild(Document doc, Element parent, String name, String value) {
+        Element child = doc.createElement(name); child.setTextContent(value == null ? "" : value); parent.appendChild(child);
+    }
+    public void save(Theatre t) {
         try {
-            Document doc = XmlUtil.loadDocument(FILE_NAME);
-            Element root = doc.getDocumentElement();
-            Element newElement = doc.createElement("theatre");
-            
-            Element idElement = doc.createElement("theatreId");
-            idElement.setTextContent(obj.getTheatreId());
-            newElement.appendChild(idElement);
-            
-            root.appendChild(newElement);
-            XmlUtil.saveDocument(doc, FILE_NAME);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+            Document doc = XmlUtil.loadDocument("theatres.xml");
+            NodeList nl = doc.getElementsByTagName("theatre");
+            for(int i=0; i<nl.getLength(); i++) {
+                Element existing = (Element) nl.item(i);
+                if(t.getTheatreId().equals(XmlUtil.getElementValue(existing, "theatreId"))) { doc.getDocumentElement().removeChild(existing); break; }
+            }
+            Element root = doc.getDocumentElement(); Element n = doc.createElement("theatre");
+            addChild(doc, n, "theatreId", t.getTheatreId());
+            addChild(doc, n, "name", t.getName());
+            addChild(doc, n, "city", t.getCity());
+            addChild(doc, n, "address", t.getAddress());
+            addChild(doc, n, "status", t.getStatus());
+            root.appendChild(n); XmlUtil.saveDocument(doc, "theatres.xml");
+        } catch(Exception e) { e.printStackTrace(); }
     }
-
-    public void update(Theatre obj) {
-        // Basic update implementation for tests
-    }
-
-    public void delete(String id) {
-        // Basic delete implementation for tests
-    }
-
-
 }
